@@ -4,7 +4,7 @@ renderer: all pygame drawing lives here, kept separate from game logic.
 
 import pygame
 
-WIDTH, HEIGHT = 400, 500
+WIDTH, HEIGHT = 400, 560
 BOARD_SIZE = 360
 CELL_SIZE = BOARD_SIZE // 3
 BOARD_TOP = 100
@@ -49,6 +49,11 @@ def draw_board(surface, board):
 
 def draw_text(surface, font, text, pos, color=COLOR_TEXT):
     surface.blit(font.render(text, True, color), pos)
+
+
+def draw_scoreboard(surface, font, scores):
+    text = f"X: {scores['X']}   O: {scores['O']}   Draws: {scores['draw']}"
+    draw_text(surface, font, text, (10, 55))
 
 
 def draw_banner(surface, font, text):
